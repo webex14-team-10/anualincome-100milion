@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/my-profile">MyProfile</router-link> |
-    <router-link to="/post-view">post</router-link>
+    <router-link to="/post-view">Post</router-link> |
+    <router-link to="/event-view">Event</router-link>
   </nav>
   <router-view />
 </template>

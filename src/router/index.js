@@ -3,6 +3,8 @@ import HomeView from "../views/HomeView.vue";
 import MyProfile from "../views/MyProfile.vue";
 import PostView from "../views/PostView.vue";
 import FormView from "../views/FormView.vue";
+import EventView from "../views/EventView.vue";
+import EventFormView from "../views/EventFormView.vue";
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: "/form-view",
     name: "FormView",
     component: FormView,
+  },
+  {
+    path: "/event-view",
+    name: "EventView",
+    component: EventView,
+  },
+  {
+    path: "/eventform-view",
+    name: "EventFormView",
+    component: EventFormView,
   },
 ];
 
