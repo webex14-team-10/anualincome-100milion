@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import MyProfile from "../views/MyProfile.vue";
+import PostView from "../views/PostView.vue";
+import FormView from "../views/FormView.vue";
 
 const routes = [
   {
@@ -12,6 +14,16 @@ const routes = [
     path: "/my-profile",
     name: "MyProfile",
     component: MyProfile,
+  },
+  {
+    path: "/post-view",
+    name: "PostView",
+    component: PostView,
+  },
+  {
+    path: "/form-view",
+    name: "FormView",
+    component: FormView,
   },
 ];
 
