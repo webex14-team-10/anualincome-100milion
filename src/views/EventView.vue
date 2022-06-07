@@ -4,12 +4,14 @@
     <h2>みんなの投稿</h2>
     <div id="form">
       <buttom
-        ><router-link to="/form-view" class="form-text">+</router-link></buttom
+        ><router-link to="/eventform-view" class="form-text"
+          >+</router-link
+        ></buttom
       >
     </div>
   </div>
 
-  <div id="posts-teets">
+  <div id="posts-tweets">
     <ul class="posts__container">
       <li v-for="post in posttext" :key="post" class="memo">
         <div class="memo__text">
@@ -25,7 +27,7 @@
 
 <script>
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/firebase.js";
+import { db } from "/Users/ichidakeiji/webex/anualincome-100milion/src/firebase.js";
 export default {
   data() {
     return {
@@ -34,7 +36,7 @@ export default {
     };
   },
   async created() {
-    await getDocs(collection(db, "tweets")).then((snapshot) => {
+    await getDocs(collection(db, "event")).then((snapshot) => {
       snapshot.forEach((doc) => {
         this.posttext.push({
           id: doc.id,
