@@ -25,7 +25,7 @@
 
 <script>
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "/Users/ichidakeiji/webex/anualincome-100milion/src/firebase.js";
+import { db } from "@/firebase.js";
 export default {
   data() {
     return {
