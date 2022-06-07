@@ -3,7 +3,9 @@
     <div class="nav__logo nav__link">AreCon.</div>
     <div class="nav__items">
       <router-link to="/" class="nav__item nav__link">Home</router-link>
-
+      <router-link to="/event-view" class="nav__item nav__link"
+        >Event</router-link
+      >
       <router-link to="/post-view" class="nav__item nav__link"
         >post</router-link
       >

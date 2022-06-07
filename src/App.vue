@@ -1,8 +1,6 @@
 <template>
-
   <div>
     <NavBar />
-    <router-link to="/event-view">Event</router-link>
     <router-view />
   </div>
 </template>
