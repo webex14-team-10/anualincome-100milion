@@ -8,7 +8,7 @@
 </template>
 <script>
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "/Users/ichidakeiji/webex/anualincome-100milion/src/firebase.js";
+import { db } from "@/firebase.js";
 
 export default {
   data() {
