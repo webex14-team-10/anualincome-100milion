@@ -4,6 +4,9 @@ import PostView from "../views/PostView.vue";
 import FormView from "../views/FormView.vue";
 import Signup from "../views/SignupView.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import EventView from "../views/EventView.vue";
+import EventFormView from "../views/EventFormView.vue";
+
 
 const routes = [
   {
@@ -28,6 +31,16 @@ const routes = [
     meta: {
       requireAuth: true,
     },
+  },
+  {
+    path: "/event-view",
+    name: "EventView",
+    component: EventView,
+  },
+  {
+    path: "/eventform-view",
+    name: "EventFormView",
+    component: EventFormView,
   },
 ];
 
