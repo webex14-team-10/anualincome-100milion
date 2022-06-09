@@ -1,5 +1,5 @@
 import { collection, addDocs } from "firebase/firestore";
-import { db } from "@/firebase.js";
+import { db } from "/Users/ichidakeiji/webex/anualincome-100milion/src/firebase.js";
 
 export default (await import("vue")).defineComponent({
   data() {

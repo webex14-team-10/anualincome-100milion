@@ -24,9 +24,14 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
 
 import { db } from "@/firebase.js";
+=======
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "/Users/ichidakeiji/webex/anualincome-100milion/src/firebase.js";
+>>>>>>> parent of d0685f3 (完成？)
 export default {
   data() {
     return {

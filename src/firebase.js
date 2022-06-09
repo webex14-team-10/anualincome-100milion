@@ -1,7 +1,9 @@
+// 必要な関数を import
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
+  //...
   apiKey: "AIzaSyAkoOHSjIrrUoNCcDX1QBjmQAvY79L90bM",
   authDomain: "anualincome-100milion.firebaseapp.com",
   projectId: "anualincome-100milion",

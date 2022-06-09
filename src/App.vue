@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <router-link to="/">Login</router-link>
   <button @click="handleSignOut" v-if="isLoggedIn">ログアウト</button>
   <div>
@@ -40,6 +41,16 @@ export default {
 };
 </script>
 
+=======
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/my-profile">MyProfile</router-link> |
+    <router-link to="/post-view">post</router-link>
+  </nav>
+  <router-view />
+</template>
+
+>>>>>>> parent of d0685f3 (完成？)
 <style>
 * {
   box-sizing: border-box;
