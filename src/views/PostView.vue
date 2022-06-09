@@ -24,9 +24,8 @@
 </template>
 
 <script>
-
 import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
-import { collection, getDocs } from "firebase/firestore";
+
 import { db } from "@/firebase.js";
 export default {
   data() {
