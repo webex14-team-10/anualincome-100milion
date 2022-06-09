@@ -14,10 +14,10 @@
   <div id="posts-tweets">
     <ul class="posts__container">
       <li v-for="post in posttext" :key="post" class="memo">
-        <div class="memo__text">
+        <div class="memo__text" v-bind:class="{ done: post }">
           {{ post.data.text }}
         </div>
-        <button class="memo__delete" v-on:click="deleteinput(todo)">
+        <button class="memo__delete" v-on:click="deleteinput(post)">
           削除
         </button>
       </li>
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+
+import { collection, doc, getDocs, deleteDoc } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase.js";
 export default {
@@ -45,7 +47,15 @@ export default {
       });
     });
   },
-  methods: {},
+  methods: {
+    async deleteinput(post) {
+      var index = this.posttext.indexOf(post);
+
+      this.posttext.splice(index, 1);
+      console.log(post.id);
+      await deleteDoc(doc(db, "event", post.id));
+    },
+  },
 };
 </script>
 
