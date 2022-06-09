@@ -7,7 +7,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import EventView from "../views/EventView.vue";
 import EventFormView from "../views/EventFormView.vue";
 
-
 const routes = [
   {
     path: "/",
