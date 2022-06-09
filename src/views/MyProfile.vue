@@ -5,17 +5,12 @@
   <div>
     <div>
       ニックネーム
-      <input type="text" v-model="userNameInput" />
+      <input type="text" v-model="userName" />
     </div>
     <div>
       地域
       <td>
-        <select
-          id="shop_pref"
-          name="input_pref"
-          class="form-control input-lg"
-          v-model="userAreaInput"
-        >
+        <select id="shop_pref" name="input_pref" class="form-control input-lg">
           <option value="">都道府県選択</option>
           <option v-for="item in prefectures" v-bind:key="item.prefCode">
             {{ item.prefName }}
@@ -27,14 +22,13 @@
     <div>アイコン画像選択</div>
     <div>
       一言コメント
-      <input type="text" v-model="userCommentInput" />
+      <input type="text" v-model="userCommnet" />
     </div>
     <div>
       その他あなたに関する情報
-      <input type="text" v-model="userInfoInput" />
+      <input type="text" />
     </div>
   </div>
-  <button v-on:click="userInfomationSave">保存</button>
   //*開発上の確認ボタン
   <button v-on:click="confirmBtn">oooo</button>
 </template>
@@ -46,21 +40,9 @@ export default {
     return {
       //APIデータを受け取る配列を定義
       prefectures: null,
-      userInfomation: [],
-      a: 0,
     };
   },
   methods: {
-    userInfomationSave() {
-      this.userInfomation = [];
-      this.userInfomation.push({
-        userName: this.userNameInput,
-        userArea: this.userAreaInput,
-        userComment: this.userCommentInput,
-        userInfo: this.userInfoInput,
-      });
-      console.log(this.userInfomation);
-    },
     confirmBtn() {
       console.log(this.prefectures);
     },
