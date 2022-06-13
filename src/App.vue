@@ -1,6 +1,5 @@
 <template>
   <router-link to="/">Login</router-link>
-  <button @click="handleSignOut" v-if="isLoggedIn">ログアウト</button>
   <div>
     <NavBar />
     <router-view />
