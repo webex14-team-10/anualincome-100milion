@@ -23,12 +23,11 @@ export default {
       } else {
         var todo = {
           text: this.textInput,
+          Star: 0,
         };
         console.log(todo);
         this.textInput = "";
-        addDoc(collection(db, "tweets"), {
-          data: todo,
-        });
+        addDoc(collection(db, "tweets"), todo);
       }
     },
   },
