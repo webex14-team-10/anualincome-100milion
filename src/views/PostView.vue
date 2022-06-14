@@ -1,43 +1,46 @@
 <template>
-  <div class="content">
-    <div id="posts-wrapper">
-      <hr />
-      <h2>みんなの投稿</h2>
-      <div id="form">
-        <buttom
-          ><router-link to="/form-view" class="form-text"
-            >+</router-link
-          ></buttom
-        >
+  <div>
+    <div class="content">
+      <div id="posts-wrapper">
+        <hr />
+        <h2>みんなの投稿</h2>
+        <div id="form">
+          <buttom
+            ><router-link to="/form-view" class="form-text"
+              >+</router-link
+            ></buttom
+          >
+        </div>
       </div>
-    </div>
 
-    <div id="posts-teets">
-      <ul class="posts__container">
-        <li v-for="post in posttext" :key="post">
-          <div class="memo">
-            <div class="memo__text" v-bind:class="{ done: post }">
-              {{ post.text }}
-            </div>
-            <button class="memo__delete" v-on:click="deleteinput(post)">
-              削除
-            </button>
-            <div class="memo-bar">
-              <div class="hert">
-                <div class="button_solid014">
-                  <a href="#" v-on:click="addStar(post)"
-                    >いいねボタン&emsp;→&emsp;{{ post.Star }}</a
-                  >
+      <div id="posts-teets">
+        <ul class="posts__container">
+          <li v-for="post in posttext" :key="post">
+            <div class="memo">
+              <div class="memo__text" v-bind:class="{ done: post }">
+                {{ post.text }}
+              </div>
+              <button class="memo__delete" v-on:click="deleteinput(post)">
+                削除
+              </button>
+              <div class="memo-bar">
+                <div class="hert">
+                  <div class="button_solid014">
+                    <a href="#" v-on:click="addStar(post)"
+                      >いいねボタン&emsp;→&emsp;{{ post.Star }}</a
+                    >
+                  </div>
+
+                  <!-- <button v-on:click="addStar(post)">🦷</button> -->
+                  <div class="like"></div>
                 </div>
-
-                <!-- <button v-on:click="addStar(post)">🦷</button> -->
-                <div class="like"></div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+    <MyProfile />
   </div>
 </template>
 
@@ -52,7 +55,12 @@ import {
 
 import { db } from "@/firebase.js";
 
+import MyProfile from "@/components/MyProfile.vue";
+
 export default {
+  components: {
+    MyProfile,
+  },
   data() {
     return {
       posttext: [],
