@@ -6,7 +6,7 @@
       <div id="form">
         <buttom
           ><router-link to="/form-view" class="form-text"
-            >+</router-link
+            >好きなように発信しよう</router-link
           ></buttom
         >
       </div>
