@@ -6,7 +6,7 @@
       <div id="form">
         <buttom
           ><router-link to="/eventform-view" class="form-text"
-            >+</router-link
+            >Eventを開催しよう</router-link
           ></buttom
         >
       </div>
@@ -22,6 +22,7 @@
             <button class="memo__delete" v-on:click="deleteinput(post)">
               削除
             </button>
+            <button v-on:click="test(post)">詳細</button>
             <div class="memo-bar">
               <div class="hert">
                 <div class="button_solid014">
@@ -30,7 +31,6 @@
                   >
                 </div>
 
-                <button v-on:click="test(post)">詳細</button>
                 <div class="like"></div>
               </div>
             </div>
@@ -143,5 +143,29 @@ ul {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);
+}
+
+.form-text {
+  border: solid 1px #333;
+  border-radius: 50px;
+  padding: 16px 10px 16px 20px;
+  text-align: center;
+  position: relative;
+  color: rgb(107, 163, 146);
+}
+.form-text::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+
+  transform: rotate(45deg);
+  position: absolute;
+  margin-top: -4px;
+  top: 50%;
+  left: 110px;
+}
+
+.memo__text {
+  font-size: 20px;
 }
 </style>
