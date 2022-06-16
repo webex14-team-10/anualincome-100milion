@@ -29,6 +29,7 @@ export default {
   methods: {
     pushinput() {
       if (this.textInput === "") {
+        window.alert("記入してください");
         return;
       } else {
         var todo = {

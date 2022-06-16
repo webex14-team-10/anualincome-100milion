@@ -6,9 +6,10 @@
         <h2>みんなの投稿</h2>
         <div id="form">
           <buttom>
-            <router-link to="/eventform-view" class="form-text">+</router-link>
-            Eventを開催しよう</buttom
-          >
+            <router-link to="/eventform-view" class="form-text"
+              >Eventを開催しよう</router-link
+            >
+          </buttom>
         </div>
       </div>
       <div id="posts-tweets">
@@ -71,11 +72,21 @@ export default {
   },
   methods: {
     async deleteinput(post) {
-      var index = this.posttext.indexOf(post);
+      //テストで作る
+      let result = window.confirm("ボタンをクリック！");
 
-      this.posttext.splice(index, 1);
-      console.log(post.id);
-      await deleteDoc(doc(db, "event", post.id));
+      if (result) {
+        console.log("OKがクリックされました");
+        var index = this.posttext.indexOf(post);
+        this.posttext.splice(index, 1);
+        console.log(post.id);
+        await deleteDoc(doc(db, "event", post.id));
+      } else {
+        console.log("キャンセルがクリックされました");
+        return;
+      }
+
+      //ここまで
     },
     async addStar(post) {
       console.log("keisi");

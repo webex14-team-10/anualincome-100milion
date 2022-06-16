@@ -77,11 +77,18 @@ export default {
   },
   methods: {
     async deleteinput(post) {
-      var index = this.posttext.indexOf(post);
+      let result = window.confirm("ボタンをクリック！");
 
-      this.posttext.splice(index, 1);
-      console.log(post.id);
-      await deleteDoc(doc(db, "tweets", post.id));
+      if (result) {
+        console.log("OKがクリックされました");
+        var index = this.posttext.indexOf(post);
+        this.posttext.splice(index, 1);
+        console.log(post.id);
+        await deleteDoc(doc(db, "tweets", post.id));
+      } else {
+        console.log("キャンセルがクリックされました");
+        return;
+      }
     },
     async addStar(post) {
       console.log("keisi");
