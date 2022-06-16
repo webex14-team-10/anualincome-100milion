@@ -73,7 +73,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 #form-wrapper {
   text-align: center;
 }

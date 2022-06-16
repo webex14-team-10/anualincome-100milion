@@ -34,8 +34,6 @@
       </div>
     </div>
   </div>
-
-  <MyProfile />
 </template>
 
 <script>
@@ -48,12 +46,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/firebase.js";
 
-import MyProfile from "@/components/MyProfile.vue";
-
 export default {
-  components: {
-    MyProfile,
-  },
   data() {
     return {
       posttext: [],
@@ -104,11 +97,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .content {
   text-align: center;
 }
-.memos {
+.memo {
   background-color: rgb(53, 206, 141);
   margin: 20px 50px;
   border-radius: 30px;
