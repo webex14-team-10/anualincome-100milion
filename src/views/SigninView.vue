@@ -1,26 +1,90 @@
 <template>
-  <div class="links">
-    <a v-if="isAuth" @click="signOut" class="button--grey">signOut</a>
-    <a v-else @click="signIn" class="button--green">signIn</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>ログイン画面</h2>
+        <div class="mt-2">
+          <b-form-input
+            v-model="email"
+            type="text"
+            placeholder="メールアドレス"
+          />
+        </div>
+        <div class="mt-2">
+          <b-form-input
+            v-model="password"
+            type="text"
+            placeholder="パスワード"
+          />
+        </div>
+        <div class="mt-2">
+          <b-button block variant="primary" @click="emailLogin"
+            >ログイン</b-button
+          >
+        </div>
+        <div class="mt-2">
+          <b-button block variant="primary" @click="googleLogin"
+            >Google ログイン</b-button
+          >
+        </div>
+        <div class="mt-2">
+          <b-alert v-model="showError" dismissible variant="danger">{{
+            errorMessage
+          }}</b-alert>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+<style>
+.mt-2 {
+  margin-top: 2px;
+}
+</style>
 
 <script>
-import { db } from "@/firebase.js";
+import firebase from "firebase/app";
+import router from "../router";
 export default {
-  methods: {
-    signIn: function () {
-      const provider = new db.auth.GoogleAuthProvider();
-      db.auth().signInWithRedirect(provider);
-    },
-  },
-  asyncData() {
+  name: "logIn",
+  data() {
     return {
-      isAuth: false,
+      email: "",
+      password: "",
+      errorMessage: "",
+      showError: false,
     };
   },
-  mounted: function () {
-    db.auth().onAuthStateChanged((user) => (this.isAuth = !!user));
+  methods: {
+    emailLogin() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then((result) => {
+          console.log(result);
+          router.push("/success");
+        })
+        .catch((error) => {
+          console.log(error);
+          this.errorMessage = error.message;
+          this.showError = true;
+        });
+    },
+    googleLogin() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then((result) => {
+          console.log(result.user);
+          router.push("/success");
+        })
+        .catch((error) => {
+          console.log(error);
+          this.errorMessage = error.message;
+          this.showError = true;
+        });
+    },
   },
 };
 </script>
