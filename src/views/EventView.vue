@@ -66,7 +66,7 @@ export default {
   methods: {
     async deleteinput(post) {
       //テストで作る
-      let result = window.confirm("ボタンをクリック！");
+      let result = window.confirm("本当に消去しますか？");
 
       if (result) {
         console.log("OKがクリックされました");
