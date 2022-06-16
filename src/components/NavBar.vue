@@ -9,9 +9,6 @@
       <router-link to="/post-view" class="nav__item nav__link"
         >post</router-link
       >
-      <router-link to="/my-profile" class="nav__item nav__link"
-        >MyProfile</router-link
-      >
     </div>
   </div>
 </template>

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import MyProfile from "../views/MyProfile.vue";
 import PostView from "../views/PostView.vue";
 import FormView from "../views/FormView.vue";
 import EventpropView from "../views/EventpropView.vue";
@@ -12,11 +11,6 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-  },
-  {
-    path: "/my-profile",
-    name: "MyProfile",
-    component: MyProfile,
   },
   {
     path: "/post-view",

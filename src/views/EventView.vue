@@ -1,19 +1,29 @@
 <template>
+  <div>
   <div class="content">
     <div id="posts-wrapper">
       <hr />
       <h2>みんなの投稿</h2>
       <div id="form">
-        <buttom
-          ><router-link to="/eventform-view" class="form-text"
-            >Eventを開催しよう</router-link
-          ></buttom
-        >
+        <buttom>
+        <router-link to="/eventform-view" class="form-text">+</router-link>
+        Eventを開催しよう
+        </router-link></buttom>
       </div>
     </div>
-
     <div id="posts-tweets">
       <ul class="posts__container">
+        <li v-for="post in posttext" :key="post" class="memo">
+          <div class="memo__text" v-bind:class="{ done: post }">
+            {{ post.data.text }}
+          </div>
+          <button class="memo__delete" v-on:click="deleteinput(post)">
+            削除
+          </button>
+        </li>
+      </ul>
+    </div>
+    <MyProfile />
         <li v-for="post in posttext" :key="post">
           <div class="memos">
             <div class="memo__text" v-bind:class="{ done: post }">
@@ -30,7 +40,6 @@
                     >いいねボタン&emsp;→&emsp;{{ post.Star }}</a
                   >
                 </div>
-
                 <div class="like"></div>
               </div>
             </div>
@@ -50,7 +59,13 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "@/firebase.js";
+
+import MyProfile from "@/components/MyProfile.vue";
+
 export default {
+  components: {
+    MyProfile,
+  },
   data() {
     return {
       posttext: [],

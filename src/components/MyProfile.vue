@@ -1,15 +1,15 @@
 <template>
   <div class="profile">
-    <h1>This is an my profile page</h1>
-  </div>
-  <div>
+    <h1>my profile page</h1>
+
     <div>
-      ニックネーム
-      <input type="text" v-model="userNameInput" />
-    </div>
-    <div>
-      地域
-      <td>
+      <div>アイコン画像選択</div>
+      <div>
+        Name :
+        <input type="text" v-model="userNameInput" />
+      </div>
+      <div class="area__select">
+        Prefecture :
         <select
           id="shop_pref"
           name="input_pref"
@@ -21,22 +21,21 @@
             {{ item.prefName }}
           </option>
         </select>
-      </td>
-    </div>
+      </div>
 
-    <div>アイコン画像選択</div>
-    <div>
-      一言コメント
-      <input type="text" v-model="userCommentInput" />
+      <div>
+        Comments :
+        <input type="text" v-model="userCommentInput" />
+      </div>
+      <div>
+        Information :
+        <input type="text" v-model="userInfoInput" />
+      </div>
     </div>
-    <div>
-      その他あなたに関する情報
-      <input type="text" v-model="userInfoInput" />
-    </div>
+    <button v-on:click="userInfomationSave">保存</button>
+    //*開発上の確認ボタン
+    <button v-on:click="confirmBtn">oooo</button>
   </div>
-  <button v-on:click="userInfomationSave">保存</button>
-  //*開発上の確認ボタン
-  <button v-on:click="confirmBtn">oooo</button>
 </template>
 
 <script>
@@ -74,3 +73,15 @@ export default {
   },
 };
 </script>
+
+<style>
+.profile {
+  text-align: center;
+  background-color: rgb(199, 254, 190);
+  margin: 20px 50px;
+  border-radius: 30px;
+}
+.area__select {
+  text-align: center;
+}
+</style>
