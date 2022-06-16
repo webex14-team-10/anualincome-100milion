@@ -38,7 +38,9 @@
         </ul>
       </div>
     </div>
-    <MyProfile />
+    <div class="My">
+      <MyProfile />
+    </div>
   </div>
 </template>
 
@@ -77,11 +79,18 @@ export default {
   },
   methods: {
     async deleteinput(post) {
-      var index = this.posttext.indexOf(post);
+      let result = window.confirm("ボタンをクリック！");
 
-      this.posttext.splice(index, 1);
-      console.log(post.id);
-      await deleteDoc(doc(db, "tweets", post.id));
+      if (result) {
+        console.log("OKがクリックされました");
+        var index = this.posttext.indexOf(post);
+        this.posttext.splice(index, 1);
+        console.log(post.id);
+        await deleteDoc(doc(db, "tweets", post.id));
+      } else {
+        console.log("キャンセルがクリックされました");
+        return;
+      }
     },
     async addStar(post) {
       console.log("keisi");
@@ -93,9 +102,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.My {
+}
+
 .content {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 300px;
 }
 .memo {
   background-color: rgb(199, 254, 190);
@@ -145,5 +160,28 @@ ul {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);
+}
+.form-text {
+  border: solid 1px #333;
+  border-radius: 50px;
+  padding: 16px 10px 16px 20px;
+  text-align: center;
+  position: relative;
+  color: rgb(107, 163, 146);
+}
+.form-text::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+
+  transform: rotate(45deg);
+  position: absolute;
+  margin-top: -4px;
+  top: 50%;
+  left: 110px;
+}
+
+.memo__text {
+  font-size: 20px;
 }
 </style>

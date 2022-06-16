@@ -56,6 +56,7 @@ export default {
   methods: {
     pushinput() {
       if (this.textInput === "" || this.textarea === "") {
+        window.alert("記入してください");
         return;
       } else {
         var todo = {
@@ -72,7 +73,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 #form-wrapper {
   text-align: center;
 }

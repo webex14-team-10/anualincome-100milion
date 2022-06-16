@@ -74,11 +74,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .profile {
   text-align: center;
   background-color: rgb(199, 254, 190);
   margin: 20px 50px;
+  padding: 30px 30px;
   border-radius: 30px;
 }
 .area__select {
