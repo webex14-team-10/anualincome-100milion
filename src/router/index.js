@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import PostView from "../views/PostView.vue";
 import FormView from "../views/FormView.vue";
-
+import EventpropView from "../views/EventpropView.vue";
 import EventView from "../views/EventView.vue";
 import EventFormView from "../views/EventFormView.vue";
 
@@ -26,11 +26,18 @@ const routes = [
     path: "/event-view",
     name: "EventView",
     component: EventView,
+    props: true,
   },
   {
     path: "/eventform-view",
     name: "EventFormView",
     component: EventFormView,
+  },
+  {
+    path: "/eventpropView.vue",
+    name: "EventpropView",
+    component: EventpropView,
+    props: true,
   },
 ];
 

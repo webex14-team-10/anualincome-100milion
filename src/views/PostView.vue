@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <div class="content">
-      <div id="posts-wrapper">
-        <hr />
-        <h2>みんなの投稿</h2>
-        <div id="form">
-          <buttom
-            ><router-link to="/form-view" class="form-text"
-              >+</router-link
-            ></buttom
-          >
-        </div>
+  <div class="content">
+    <div id="posts-wrapper">
+      <hr />
+      <h2>みんなの投稿</h2>
+      <div id="form">
+        <buttom
+          ><router-link to="/form-view" class="form-text"
+            >好きなように発信しよう</router-link
+          ></buttom
+        >
       </div>
 
       <div id="posts-teets">
