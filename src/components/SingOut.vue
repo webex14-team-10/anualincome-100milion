@@ -1,5 +1,7 @@
 <template>
-  <button @click="signOut">ログアウト</button>
+  <div class="logout">
+    <button @click="signOut">ログアウト</button>
+  </div>
 </template>
 <script>
 import { getAuth, signOut } from "firebase/auth";
@@ -10,6 +12,7 @@ export default {
       signOut(auth)
         .then(() => {
           alert("ログアウト");
+          this.$router.push({ path: "/" });
         })
         .catch((error) => {
           console.log(error);
@@ -18,3 +21,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.logout {
+  height: 50px;
+  display: flex;
+}
+</style>
