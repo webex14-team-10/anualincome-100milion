@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="test">
     <NavBar />
     <router-view />
     <div class="box"></div>
@@ -20,12 +20,9 @@ export default {
 * {
   box-sizing: border-box;
 }
-body {
-  margin: 0 15%;
-  border: 1px solid #4464ad;
-}
+
 .box {
   height: 50px;
-  background-color: #4464ad;
+  background-color: #87d68d;
 }
 </style>

@@ -108,10 +108,11 @@ export default {
 
 <style scoped>
 .content {
+  background-color: white;
   text-align: center;
 }
 .memo {
-  background-color: #f58f29;
+  background-color: #bcebcb;
   margin: 20px 50px;
   border-radius: 30px;
 }

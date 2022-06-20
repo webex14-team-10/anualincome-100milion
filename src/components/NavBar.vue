@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #4464ad;
+  background-color: #87d68d;
 }
 .nav__link {
   display: flex;
