@@ -2,6 +2,7 @@
   <div>
     <NavBar />
     <router-view />
+    <div class="box"></div>
   </div>
 </template>
 
@@ -20,6 +21,11 @@ export default {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
+  margin: 0 15%;
+  border: 1px solid #4464ad;
+}
+.box {
+  height: 50px;
+  background-color: #4464ad;
 }
 </style>

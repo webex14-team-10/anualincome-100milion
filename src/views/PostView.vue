@@ -1,4 +1,7 @@
 <template>
+  <div class="My">
+    <MyProfile />
+  </div>
   <div class="content">
     <div id="posts-wrapper">
       <hr />
@@ -37,9 +40,6 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="My">
-      <MyProfile />
     </div>
   </div>
 </template>
@@ -103,14 +103,9 @@ export default {
 </script>
 
 <style scoped>
-.My {
-}
-
 .content {
   text-align: center;
-  display: flex;
   justify-content: center;
-  padding: 0 300px;
 }
 .memo {
   background-color: rgb(199, 254, 190);
