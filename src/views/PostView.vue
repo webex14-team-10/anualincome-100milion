@@ -1,4 +1,7 @@
 <template>
+  <div class="My">
+    <MyProfile />
+  </div>
   <div class="content">
     <div id="posts-wrapper">
       <hr />
@@ -38,9 +41,6 @@
         </ul>
       </div>
     </div>
-    <div class="My">
-      <MyProfile />
-    </div>
   </div>
 </template>
 
@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     async deleteinput(post) {
-      let result = window.confirm("ボタンをクリック！");
+      let result = window.confirm("本当に消去しますか？");
 
       if (result) {
         console.log("OKがクリックされました");
@@ -103,14 +103,9 @@ export default {
 </script>
 
 <style scoped>
-.My {
-}
-
 .content {
   text-align: center;
-  display: flex;
   justify-content: center;
-  padding: 0 300px;
 }
 .memo {
   background-color: rgb(199, 254, 190);

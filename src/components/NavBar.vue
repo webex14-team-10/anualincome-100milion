@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  background-color: black;
+  background-color: #4464ad;
 }
 .nav__link {
   display: flex;
