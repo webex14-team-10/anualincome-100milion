@@ -6,7 +6,7 @@
       <div>アイコン画像選択</div>
       <div>
         Name :
-        <input type="text" v-model="userNameInput" />
+        <input type="text" v-model="userInfomation.userName" />
       </div>
       <div class="area__select">
         Prefecture :
@@ -14,7 +14,7 @@
           id="shop_pref"
           name="input_pref"
           class="form-control input-lg"
-          v-model="userAreaInput"
+          v-model="userInfomation.userArea"
         >
           <option value="">都道府県選択</option>
           <option v-for="item in prefectures" v-bind:key="item.prefCode">
@@ -25,16 +25,16 @@
 
       <div>
         Comments :
-        <input type="text" v-model="userCommentInput" />
+        <input type="text" v-model="userInfomation.userComment" />
       </div>
       <div>
         Information :
-        <input type="text" v-model="userInfoInput" />
+        <input type="text" v-model="userInfomation.userInfo" />
       </div>
     </div>
     <button v-on:click="userInfomationSave">保存</button>
-    //*開発上の確認ボタン
-    <button v-on:click="confirmBtn">oooo</button>
+
+    <button v-on:click="confirmBtn">開発用の確認ボタン</button>
   </div>
 </template>
 
@@ -42,6 +42,7 @@
 import axios from "axios";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   data() {
@@ -53,27 +54,29 @@ export default {
     };
   },
   async created() {
-    await getDoc(doc(db, "users", "nvS3g8ISpZPQm6KU6k6LuLIxObp1"))
-      .then((snapshot) => {
-        this.userInfomation = snapshot.data();
-      })
-      .then(() => {
-        console.log(this.userInfomation);
-      });
+    const auth = getAuth();
+    onAuthStateChanged(auth, async (user) => {
+      await getDoc(doc(db, "users", user.uid))
+        .then((snapshot) => {
+          if (!snapshot.exists) {
+            this.userInfomation = snapshot.data();
+          }
+        })
+        .then(() => {
+          console.log(this.userInfomation);
+        });
+    });
   },
   methods: {
     userInfomationSave() {
-      (this.userInfomation.userName = this.userNameInput),
-        (this.userInfomation.userArea = this.userAreaInput),
-        (this.userInfomation.userComment = this.userCommentInput),
-        (this.userInfomation.userInfo = this.userInfoInput),
-        console.log(this.userInfomation);
+      console.log(this.userInfomation);
+      const auth = getAuth();
+      onAuthStateChanged(auth, async (user) => {
+        await setDoc(doc(db, "users", user.uid), this.userInfomation);
+      });
     },
     confirmBtn() {
-      setDoc(
-        doc(db, "users", "nvS3g8ISpZPQm6KU6k6LuLIxObp1"),
-        this.userInfomation
-      );
+      console.log(this.a);
     },
   },
   mounted() {
