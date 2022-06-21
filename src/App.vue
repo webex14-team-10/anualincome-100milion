@@ -1,8 +1,7 @@
 <template>
-  <div>
+  <div class="test">
     <NavBar />
     <router-view />
-    <div class="box"></div>
   </div>
 </template>
 
@@ -17,6 +16,7 @@ export default {
 </script>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
