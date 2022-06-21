@@ -40,28 +40,40 @@
 
 <script>
 import axios from "axios";
+import { setDoc, doc, getDoc } from "firebase/firestore";
+import { db } from "@/firebase.js";
+
 export default {
   data() {
     return {
       //APIデータを受け取る配列を定義
       prefectures: null,
-      userInfomation: [],
-      a: 0,
+      userInfomation: {},
+      a: { name: "aaa" },
     };
+  },
+  async created() {
+    await getDoc(doc(db, "users", "nvS3g8ISpZPQm6KU6k6LuLIxObp1"))
+      .then((snapshot) => {
+        this.userInfomation = snapshot.data();
+      })
+      .then(() => {
+        console.log(this.userInfomation);
+      });
   },
   methods: {
     userInfomationSave() {
-      this.userInfomation = [];
-      this.userInfomation.push({
-        userName: this.userNameInput,
-        userArea: this.userAreaInput,
-        userComment: this.userCommentInput,
-        userInfo: this.userInfoInput,
-      });
-      console.log(this.userInfomation);
+      (this.userInfomation.userName = this.userNameInput),
+        (this.userInfomation.userArea = this.userAreaInput),
+        (this.userInfomation.userComment = this.userCommentInput),
+        (this.userInfomation.userInfo = this.userInfoInput),
+        console.log(this.userInfomation);
     },
     confirmBtn() {
-      console.log(this.prefectures);
+      setDoc(
+        doc(db, "users", "nvS3g8ISpZPQm6KU6k6LuLIxObp1"),
+        this.userInfomation
+      );
     },
   },
   mounted() {
