@@ -110,9 +110,12 @@ export default {
 .content {
   background-color: white;
   text-align: center;
+  background-color: #c9f1ee;
 }
 .memo {
+
   background-color: #bcebcb;
+
   margin: 20px 50px;
   border-radius: 30px;
 }
@@ -162,12 +165,12 @@ ul {
 }
 
 .form-text {
-  border: solid 1px #333;
+  border: solid 1px rgb(31, 26, 26);
   border-radius: 50px;
   padding: 16px 10px 16px 20px;
   text-align: center;
   position: relative;
-  color: rgb(107, 163, 146);
+  color: rgb(24, 37, 34);
 }
 .form-text::after {
   content: "";

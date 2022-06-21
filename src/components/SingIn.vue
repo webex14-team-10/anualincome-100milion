@@ -18,6 +18,7 @@ export default {
           credential.accessToken;
           result.user;
           alert("ログイン成功");
+          this.$router.push("/post-view");
         })
         .catch((error) => {
           GoogleAuthProvider.credentialFromError(error);
@@ -27,3 +28,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.login {
+  height: 50px;
+  display: flex;
+}
+</style>
