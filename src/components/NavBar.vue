@@ -1,7 +1,6 @@
 <template>
   <div class="nav__bar">
-    <div class="nav__logo nav__link">AreCon.</div>
-    <div>{}</div>
+    <div class="nav__logo nav__link nav__item">AreCon.</div>
     <div class="nav__items">
       <router-link to="/" class="nav__item nav__link">Home</router-link>
       <router-link to="/event-view" class="nav__item nav__link"
@@ -50,5 +49,7 @@
 .nav__item {
   width: 100px;
   border-left: 1px solid #eee;
+  font-size: 150%;
+  font-family: "Kosugi", sans-serif;
 }
 </style>
