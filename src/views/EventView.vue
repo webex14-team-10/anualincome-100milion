@@ -113,9 +113,7 @@ export default {
   background-color: #c9f1ee;
 }
 .memo {
-
   background-color: #bcebcb;
-
   margin: 20px 50px;
   border-radius: 30px;
 }

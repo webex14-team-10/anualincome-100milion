@@ -1,6 +1,7 @@
 <template>
   <div class="nav__bar">
     <div class="nav__logo nav__link">AreCon.</div>
+    <div>{}</div>
     <div class="nav__items">
       <router-link to="/" class="nav__item nav__link">Home</router-link>
       <router-link to="/event-view" class="nav__item nav__link"
@@ -12,6 +13,10 @@
     </div>
   </div>
 </template>
+
+<script>
+//import {} from "firebase/auth";
+</script>
 
 <style scoped>
 .nav__bar {
