@@ -16,7 +16,14 @@ export default {
 </script>
 
 <style>
-.test {
-  background-color: #c9f1ee;
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  height: 50px;
+  background-color: #87d68d;
+
 }
 </style>
