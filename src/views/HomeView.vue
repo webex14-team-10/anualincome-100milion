@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>大学生集まろう！</h1>
-    <p v-if="show"><SingIn /></p>
-    <p v-show="show"><SingOut /></p>
+    <p v-on:click="click" v-if="show"><SingIn /></p>
+    <p v-on:click="click" v-else><SingOut /></p>
   </div>
 </template>
 
@@ -16,14 +16,14 @@ export default {
     SingIn,
     SingOut,
   },
-  data: function () {
+  data() {
     return {
       show: true,
     };
   },
   methods: {
     click: function () {
-      this.show = !this.show;
+      this.show = false;
     },
   },
 };
