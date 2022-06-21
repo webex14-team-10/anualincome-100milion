@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1 class="home">Area Community</h1>
+    <h1 class="title">Area Community</h1>
+    <h2 class="content"></h2>
     <p v-on:click="click" v-if="show"><SingIn /></p>
     <p v-on:click="click" v-else><SingOut /></p>
   </div>
@@ -29,7 +30,7 @@ export default {
 };
 </script>
 <style>
-.home {
+.title {
   text-align: center;
   font-size: 400%;
   font-family: "Sacramento", cursive;
