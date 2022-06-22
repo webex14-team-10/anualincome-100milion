@@ -46,6 +46,7 @@ export default {
 <style scoped>
 #form-wrapper {
   text-align: center;
+  font-size: 15px;
 }
 .button_solid014s a {
   background: #eee;
@@ -77,5 +78,9 @@ export default {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);
+}
+h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 40px;
 }
 </style>

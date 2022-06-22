@@ -20,10 +20,10 @@ export default {
   box-sizing: border-box;
 }
 body {
-  margin: 0 15%;
-  background-color: #eaf5f4;
-}
-.box {
-  height: 50px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://jajaaan.co.jp/wp-content/uploads/2020/01/inside-sales.jpg")
+    center / cover;
 }
 </style>
