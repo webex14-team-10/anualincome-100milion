@@ -1,13 +1,12 @@
 <template>
   <div class="login btn-wrap">
-    <a href="" class="btn btn-switch"
-      ><button @click="signIn" class="button">ログイン!</button></a
-    >
+    <p class="btn btn-switch">
+      <button @click="signIn" class="button">ログイン!</button>
+    </p>
   </div>
 </template>
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
 export default {
   methods: {
     signIn() {
@@ -52,15 +51,13 @@ export default {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
-
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
 .btn,
-a.btn,
+p.btn,
 button.btn {
   font-size: 1.6rem;
   font-weight: 700;
@@ -82,13 +79,11 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
-
 /*背景*/
 .btn-wrap {
   margin: 20px;
 }
-
-a.btn-switch {
+p.btn-switch {
   color: #333;
   border: 1px solid #ddd;
   border-radius: 100vh;
@@ -107,16 +102,12 @@ a.btn-switch {
   box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1);
 }
-
-a.btn-switch span {
+p.btn-switch span {
   display: inline-block;
-
   -webkit-transition: all 0.3s;
-
   transition: all 0.3s;
 }
-
-a.btn-switch:hover {
+p.btn-switch:hover {
   -webkit-box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
     inset 0 3px 3px rgba(0, 0, 0, 0.18);
@@ -124,8 +115,7 @@ a.btn-switch:hover {
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
     inset 0 3px 3px rgba(0, 0, 0, 0.18);
 }
-
-a.btn-switch:hover span {
+p.btn-switch:hover span {
   -webkit-transform: scale(0.96);
   transform: scale(0.96);
 }

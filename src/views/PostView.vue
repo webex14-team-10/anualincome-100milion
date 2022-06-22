@@ -52,11 +52,8 @@ import {
   deleteDoc,
   updateDoc,
 } from "firebase/firestore";
-
 import { db } from "@/firebase.js";
-
 import MyProfile from "@/components/MyProfile.vue";
-
 export default {
   components: {
     MyProfile,
@@ -80,7 +77,6 @@ export default {
   methods: {
     async deleteinput(post) {
       let result = window.confirm("本当に消去しますか？");
-
       if (result) {
         console.log("OKがクリックされました");
         var index = this.posttext.indexOf(post);
@@ -112,18 +108,15 @@ export default {
   margin: 20px 50px;
   border-radius: 30px;
 }
-
 li {
   list-style: none;
 }
-
 ul {
   margin-left: -40px;
 }
 .form-text {
   text-decoration: none;
 }
-
 .button_solid014 a {
   background: #eee;
   border-radius: 3px;
@@ -151,7 +144,6 @@ ul {
   top: 50%;
   right: 20px;
   transition: 0.2s ease-in-out;
-
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);
@@ -168,14 +160,12 @@ ul {
   content: "";
   width: 8px;
   height: 8px;
-
   transform: rotate(45deg);
   position: absolute;
   margin-top: -4px;
   top: 50%;
   left: 110px;
 }
-
 .memo__text {
   font-size: 20px;
 }

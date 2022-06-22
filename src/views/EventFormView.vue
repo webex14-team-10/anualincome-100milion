@@ -45,7 +45,6 @@
 <script>
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/firebase.js";
-
 export default {
   data() {
     return {
@@ -81,7 +80,6 @@ img {
   margin-top: 30px;
   margin-bottom: 20px;
 }
-
 .add-tweets-input {
   width: 200px;
   height: 40px;
@@ -94,7 +92,6 @@ img {
   height: 200px;
   margin-bottom: 20px;
 }
-
 .button_solid014s a {
   background: #eee;
   border-radius: 3px;
@@ -122,7 +119,6 @@ img {
   top: 50%;
   right: 20px;
   transition: 0.2s ease-in-out;
-
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);

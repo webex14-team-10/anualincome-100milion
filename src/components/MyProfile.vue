@@ -43,7 +43,6 @@ import axios from "axios";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-
 export default {
   data() {
     return {
@@ -58,7 +57,7 @@ export default {
     onAuthStateChanged(auth, async (user) => {
       await getDoc(doc(db, "users", user.uid))
         .then((snapshot) => {
-          if (!snapshot.exists) {
+          if (snapshot.exists) {
             this.userInfomation = snapshot.data();
           }
         })
