@@ -19,7 +19,6 @@
 <script>
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/firebase.js";
-
 export default {
   data() {
     return {
@@ -48,7 +47,6 @@ export default {
 #form-wrapper {
   text-align: center;
 }
-
 .button_solid014s a {
   background: #eee;
   border-radius: 3px;
@@ -76,7 +74,6 @@ export default {
   top: 50%;
   right: 20px;
   transition: 0.2s ease-in-out;
-
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   transform: translateY(-50%);

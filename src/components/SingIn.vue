@@ -7,7 +7,6 @@
 </template>
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
 export default {
   methods: {
     signIn() {
@@ -52,13 +51,11 @@ export default {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
-
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
 }
-
 .btn,
 p.btn,
 button.btn {
@@ -82,7 +79,6 @@ button.btn {
   color: #212529;
   border-radius: 0.5rem;
 }
-
 /*背景*/
 .btn-wrap {
   margin: 20px;
@@ -110,9 +106,7 @@ p.btn-switch {
 
 p.btn-switch span {
   display: inline-block;
-
   -webkit-transition: all 0.3s;
-
   transition: all 0.3s;
 }
 
