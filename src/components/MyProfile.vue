@@ -2,7 +2,8 @@
   <div class="profile">
     <h1>my profile page</h1>
 
-    <div>
+    <div class="content1">
+      <img src="../assets/cat.png" class="cord-img" />
       <div>アイコン画像選択</div>
       <div>
         Name :
@@ -98,5 +99,19 @@ export default {
 }
 .area__select {
   text-align: center;
+}
+.content1 {
+  font-size: 15px;
+  color: #2f4f4f;
+  font-family: "Sawarabi Gothic", sans-serif;
+}
+h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 40px;
+}
+img {
+  border-radius: 50%; /* 角丸半径を50%にする(=円形にする) */
+  width: 180px; /* ※縦横を同値に */
+  height: 180px; /* ※縦横を同値に */
 }
 </style>
