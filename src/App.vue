@@ -21,10 +21,9 @@ export default {
 }
 body {
   margin: 0 15%;
-  border: 1px solid #87d68d;
+  background-color: #eaf5f4;
 }
 .box {
   height: 50px;
-  background-color: #87d68d;
 }
 </style>

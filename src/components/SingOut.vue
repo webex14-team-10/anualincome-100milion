@@ -77,6 +77,7 @@ button.btn {
 .btn-wrap {
   margin: 20px;
 }
+
 p.btn-switch {
   color: #333;
   border: 1px solid #ddd;
@@ -96,11 +97,13 @@ p.btn-switch {
   box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1);
 }
+
 p.btn-switch span {
   display: inline-block;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 p.btn-switch:hover {
   -webkit-box-shadow: -1px -5px 6px rgba(0, 0, 0, 0.2), 3px 3px 5px white,
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
@@ -109,6 +112,7 @@ p.btn-switch:hover {
     0 10px 10px rgba(0, 0, 0, 0.1), inset 0 -4px 5px rgba(0, 0, 0, 0.1),
     inset 0 3px 3px rgba(0, 0, 0, 0.18);
 }
+
 p.btn-switch:hover span {
   -webkit-transform: scale(0.96);
   transform: scale(0.96);
