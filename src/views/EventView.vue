@@ -2,7 +2,6 @@
   <div>
     <div class="content">
       <div id="posts-wrapper">
-        <hr />
         <h2>みんなの投稿</h2>
         <div id="form">
           <buttom>
@@ -18,7 +17,6 @@
             <div class="memo__text" v-bind:class="{ done: post }">
               {{ post.text }}
             </div>
-
             <div class="hert">
               <div class="button_solid014">
                 <a href="#" v-on:click="deleteinput(post)">消去ボタン</a>
@@ -111,6 +109,7 @@ export default {
   background-color: #bcebcb;
   margin: 20px 50px;
   border-radius: 30px;
+  font-size: 15px;
 }
 li {
   list-style: none;
@@ -120,6 +119,7 @@ ul {
 }
 .form-text {
   text-decoration: none;
+  font-size: 20px;
 }
 .button_solid014 a {
   background: #eee;
@@ -153,12 +153,12 @@ ul {
   transform: translateY(-50%);
 }
 .form-text {
-  border: solid 1px rgb(31, 26, 26);
+  border: solid 1px rgb(14, 4, 146);
   border-radius: 50px;
   padding: 16px 10px 16px 20px;
   text-align: center;
   position: relative;
-  color: rgb(24, 37, 34);
+  color: rgb(14, 4, 146);
 }
 .form-text::after {
   content: "";
@@ -172,5 +172,8 @@ ul {
 }
 .memo__text {
   font-size: 20px;
+}
+h2 {
+  font-size: 40px;
 }
 </style>

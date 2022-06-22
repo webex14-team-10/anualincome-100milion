@@ -37,6 +37,7 @@
 .nav__link:visited {
   color: #eee;
 }
+
 .nav__logo {
   width: 130px;
   font-weight: bold;

@@ -123,4 +123,11 @@ img {
   font-weight: 900;
   transform: translateY(-50%);
 }
+.cord {
+  font-size: 25px;
+}
+h1 {
+  font-size: 40px;
+  font-family: "Sacramento", cursive;
+}
 </style>

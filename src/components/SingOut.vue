@@ -14,7 +14,7 @@ export default {
       signOut(auth)
         .then(() => {
           alert("ログアウト");
-          this.$router.push({ path: "/" });
+          open("about:blank", "_self").close();
         })
         .catch((error) => {
           console.log(error);
