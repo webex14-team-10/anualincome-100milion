@@ -1,6 +1,6 @@
 <template>
   <div class="nav__bar">
-    <div class="nav__logo nav__link nav__item">AreCon.</div>
+    <div class="nav__logo nav__item">AreCon.</div>
     <div class="nav__items">
       <router-link to="/" class="nav__item nav__link">Home</router-link>
       <router-link to="/event-view" class="nav__item nav__link"
@@ -36,12 +36,11 @@
 .nav__link:visited {
   color: #eee;
 }
-.nav__link:hover {
-  font-weight: bold;
-  color: #fff;
-}
+
 .nav__logo {
   width: 130px;
+  font-weight: bold;
+  color: #fff;
 }
 .nav__items {
   display: flex;
