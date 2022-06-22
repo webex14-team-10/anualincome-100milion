@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="home">
     <h1 class="title">Area Community</h1>
-    <h2 class="content"></h2>
+    <p class="content1">ここから新しい運命が始まる！</p>
+    <p class="content2">↓ログインボタンをクリックだ ↓</p>
     <p v-on:click="click" v-if="show"><SingIn /></p>
     <p v-on:click="click" v-else><SingOut /></p>
   </div>
@@ -30,9 +31,11 @@ export default {
 };
 </script>
 <style>
-.title {
+.home {
   text-align: center;
-  font-size: 400%;
+}
+.title {
+  font-size: 700%;
   font-family: "Sacramento", cursive;
 }
 h1 {
@@ -40,5 +43,15 @@ h1 {
   padding: 0.5em; /*文字周りの余白*/
   color: white; /*文字を白に*/
   border-radius: 0.5em; /*角の丸み*/
+}
+.content1 {
+  font-size: 40px;
+  color: #2f4f4f;
+  font-family: "Sawarabi Gothic", sans-serif;
+}
+.content2 {
+  font-size: 20px;
+  color: #191970;
+  font-family: "Noto Sans JP", sans-serif;
 }
 </style>

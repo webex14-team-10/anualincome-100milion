@@ -24,6 +24,7 @@
   justify-content: space-between;
   align-items: stretch;
   background-color: #87d68d;
+  font-size: 10px;
 }
 .nav__link {
   display: flex;
