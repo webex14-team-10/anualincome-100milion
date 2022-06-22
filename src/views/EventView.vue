@@ -2,7 +2,6 @@
   <div>
     <div class="content">
       <div id="posts-wrapper">
-        <hr />
         <h2>みんなの投稿</h2>
         <div id="form">
           <buttom>
