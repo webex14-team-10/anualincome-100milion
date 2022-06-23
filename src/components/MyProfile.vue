@@ -94,6 +94,16 @@ export default {
       onAuthStateChanged(auth, async (user) => {
         await setDoc(doc(db, "users", user.uid), this.userInfomation);
       });
+      alert("保存完了");
+    },
+    selectPicture(image) {
+      this.userInfomation.userPicture = image.index;
+      console.log(this.userInfomation.userPicture);
+      const auth = getAuth();
+      onAuthStateChanged(auth, async (user) => {
+        await setDoc(doc(db, "users", user.uid), this.userInfomation);
+      });
+      this.displayPicture = this.images[this.userInfomation.userPicture].src;
     },
     selectPicture(image) {
       this.userInfomation.userPicture = image.index;
