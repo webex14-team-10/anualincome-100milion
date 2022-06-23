@@ -6,7 +6,14 @@
   </div>
 </template>
 <script>
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
+import { db } from "@/firebase.js";
 export default {
   methods: {
     signIn() {
@@ -18,6 +25,12 @@ export default {
           const credential = GoogleAuthProvider.credentialFromResult(result);
           credential.accessToken;
           result.user;
+          onAuthStateChanged(auth, async (user) => {
+            if (!user.exists) {
+              await setDoc(doc(db, "users", user.uid), {});
+            }
+          });
+
           alert("ログイン成功");
           this.$router.push("/post-view");
         })
